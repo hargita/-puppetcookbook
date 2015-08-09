@@ -1,0 +1,3 @@
+node 'cookbook' {
+  include puppet
+}
