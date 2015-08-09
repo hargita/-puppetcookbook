@@ -17,6 +17,7 @@ sudo su -c "echo #{hostname} > /etc/hostname" && \
 sudo yum -y localinstall http://yum.puppetlabs.com/el/6/products/i386/puppetlabs-release-6-11.noarch.rpm && \
 sudo yum clean all && \
 sudo yum -y install git puppet && \
+echo -e \"Host github.com\n\tStrictHostKeyChecking no\n\" >> ~/.ssh/config
 git clone #{REPO} puppet && \
 sudo puppet apply --modulepath=/home/stefan/puppet/modules /home/stefan/puppet/manifests/site.pp
 BOOTSTRAP
