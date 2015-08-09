@@ -14,6 +14,11 @@ class puppet {
   owner  => 'stefan',
   mode   => '0600',
   }
+file { '/home/stefan/.ssh/id_rsa.pub' :
+  source => 'puppet:///modules/puppet/stefan.pub',
+  owner  => 'stefan',
+  mode   => '0600',
+  }
 
   cron { 'run-puppet':
   ensure  => 'present',
