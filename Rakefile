@@ -1,7 +1,8 @@
-SSH = 'ssh -A -i ~/.ssh/id_rsa -l stefan'
+SSH = '/usr/bin/ssh -tt -A -i ~/.ssh/id_rsa.pub -l stefan'
+
 desc "Run Puppet on ENV['CLIENT']"
 task  :apply do
    client = ENV['CLIENT']
    sh "git push"
-   ssh "#{SSH} #{client} pull-updates"
+   sh "#{SSH} #{client} pull-updates.sh"
  end
