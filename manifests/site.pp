@@ -1,1 +1,3 @@
-import 'nodes.pp'
+node 'cookbook', 'cookbook2' {
+  include puppet
+}
